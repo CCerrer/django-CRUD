@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework import routers
-from django_CRUD.careerItems import views
+from . import views
 
 router = routers.DefaultRouter()
 router.register(r'items', views.ItemViewSet)
