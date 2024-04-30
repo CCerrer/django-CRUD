@@ -1,11 +1,9 @@
-from django.urls import path, include
-from rest_framework import routers
-from . import views
+from django.urls import path
+from .views import ItemListView, ItemDetailView
 
-router = routers.DefaultRouter()
-router.register(r'items', views.ItemViewSet, basename='items')
 app_name = 'careerItems'
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('items/', ItemListView.as_view(), name='items-list'),
+    path('items/<int:pk>/', ItemDetailView.as_view(), name='items-detail'),
 ]

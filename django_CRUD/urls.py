@@ -17,5 +17,5 @@ Including another URLconf
 from django.urls import path, include
 
 urlpatterns = [
-    path('api/', include('careerItems.urls', namespace='careerItems')),
+    path('api/', include(('careerItems.urls', 'careerItems'), namespace='careerItems')),
 ]
